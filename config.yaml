@@ -1,0 +1,95 @@
+# YouTube-to-Instagram Agent Configuration
+
+# Content Settings
+content:
+  category: "Motivational"  # Main content category
+  youtube_source_keywords:
+    - "motivation shorts"
+    - "motivational speeches"
+    - "daily motivation"
+  language: "English"  # English, Hindi, mixed
+  video_length_limit: 60  # Maximum video length in seconds
+  min_video_length: 10  # Minimum video length in seconds
+  
+# YouTube Search Settings
+youtube:
+  search_timeframe: "7 days"  # recent, today, this_week, this_month
+  min_views: 10000  # Minimum views for video selection
+  min_likes_ratio: 0.9  # Minimum like ratio (likes/views)
+  max_videos_to_check: 50  # Number of videos to check per search
+  
+# Video Editing Settings
+editing:
+  output_format: "mp4"
+  output_resolution: [1080, 1920]  # width x height (9:16 for Reels)
+  fps: 30
+  add_subtitles: true
+  subtitle_style:
+    font_size: 40
+    font_color: "white"
+    stroke_color: "black"
+    stroke_width: 2
+    position: "bottom"
+  watermark:
+    enabled: true
+    text: "@lostmoment8"
+    position: "bottom-right"
+    opacity: 0.7
+  intro_outro:
+    enabled: false
+    intro_path: null  # Path to intro video file
+    outro_path: null  # Path to outro video file
+  
+# Instagram Settings
+instagram:
+  account: "@lostmoment8"
+  post_type: "reel"  # reel, video, carousel
+  
+# Caption Generation
+caption:
+  style: "inspiring"  # casual, informative, inspiring
+  max_length: 2200  # Instagram caption limit
+  include_emojis: true
+  call_to_action: true
+  hashtag_count: 15  # Number of hashtags to include
+  custom_hashtags:  # Always include these hashtags
+    - "#motivation"
+    - "#motivational"
+    - "#inspiration"
+  
+# Posting Schedule
+schedule:
+  frequency: "daily"  # daily, twice_daily, every_x_hours
+  post_times:
+    - "19:00"  # 7 PM
+  timezone: "UTC"
+  enabled: true
+  
+# Analytics
+analytics:
+  enabled: true
+  track_metrics:
+    - likes
+    - comments
+    - views
+    - reach
+    - engagement_rate
+  optimization:
+    enabled: true
+    min_posts_for_optimization: 10
+    
+# Safety & Compliance
+safety:
+  skip_copyrighted: true
+  content_filter: true
+  nsfw_filter: true
+  credit_creators: true
+  manual_approval: false  # Set to true to review before posting
+  
+# Advanced Settings
+advanced:
+  max_retries: 3
+  retry_delay: 60  # seconds
+  cleanup_downloads: true  # Delete downloaded videos after processing
+  backup_edited_videos: true
+  max_storage_gb: 10  # Maximum storage for videos in GB
